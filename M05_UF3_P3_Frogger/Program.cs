@@ -12,7 +12,6 @@ namespace M05_UF3_P3_Frogger
             TimeManager.timer.Start();
             Player ranita = new Player();
 
-
             List<Lane> lines = new List<Lane>();
 
             lines.Add(new Lane(posY: 0, speedPlayer: false, background: ConsoleColor.DarkGreen, damageElements: false, damageBackground: false, elementsPercent: 0f, elementsChar: Utils.charLogs, colorsElements: Utils.colorsCars.ToList()));
@@ -31,8 +30,7 @@ namespace M05_UF3_P3_Frogger
 
 
             while (true)
-            {
-                
+            {              
                 Utils.GAME_STATE gamestate = Utils.GAME_STATE.RUNNING;
                 while (gamestate == Utils.GAME_STATE.RUNNING)
                 {
@@ -40,8 +38,7 @@ namespace M05_UF3_P3_Frogger
                     foreach (Lane lane in lines)
                     {
                         lane.Draw();
-                        lane.Update();
-                        
+                        lane.Update();                       
                     }
                     ranita.Draw(lines);
                     Vector2Int inputs = Utils.Input();
@@ -59,8 +56,7 @@ namespace M05_UF3_P3_Frogger
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("YOU LOST..");
                 }
-                Console.ReadKey();
-                
+                Console.ReadKey();              
             }
    
         }
